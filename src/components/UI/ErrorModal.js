@@ -20,14 +20,14 @@ const ErrorModal = (props) => {
           <p>{props.message}</p>
         </div>
         <footer className={classes.actions}>
-          <Button onConfirm={props.onConfirm}>Okay</Button>
+          <Button onClick={props.onConfirm}>Okay</Button>
         </footer>
       </Card>
     )
   }
   return (
     <Fragment>
-      {ReactDOM.createPortal( <Backdrop onClick={props.onConfirm} />, document.getElementById("backdrop-root"))}
+      {ReactDOM.createPortal( <Backdrop onConfirm={props.onConfirm} />, document.getElementById("backdrop-root"))}
       {ReactDOM.createPortal( <ModalOverlay title={props.title} message={props.message} onConfirm={props.onConfirm} />, document.getElementById("overlay-root"))}
     </Fragment>
   );
