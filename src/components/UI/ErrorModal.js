@@ -25,6 +25,7 @@ const ErrorModal = (props) => {
       </Card>
     )
   }
+  
   return (
     <Fragment>
       {ReactDOM.createPortal( <Backdrop onConfirm={props.onConfirm} />, document.getElementById("backdrop-root"))}
